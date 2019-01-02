@@ -1,19 +1,23 @@
-# babel-plugin-es6-promise
+# babel-plugin-es6-promise-esm
 
 Babel plugin that rewrites Promise references to [`es6-promise`], but only if
-necessary. Tested with Node.js 0.10 and above.
+necessary. Support ES Module, Rollup.
+
+
+Forked from https://github.com/novemberborn/babel-plugin-es6-promise.
+
 
 ## Installation
 
 ```console
-$ npm install --save-dev babel-plugin-es6-promise
+$ npm install --save-dev babel-plugin-es6-promise-esm
 ```
 
 Then add `es6-promise` to your Babel config, like:
 
 ```json
 {
-  "plugins": ["es6-promise"]
+  "plugins": ["es6-promise-esm"]
 }
 ```
 
@@ -25,8 +29,10 @@ This plugin rewrites files that reference the `Promise` built-in. It inserts the
 following code at the top of each file:
 
 ```js
+import _ESPromise from "es6-promise";
+
 var _Promise = typeof Promise === 'undefined'
-  ? require('es6-promise').Promise
+  ? _ESPromise.Promise
   : Promise
 ```
 

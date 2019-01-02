@@ -1,7 +1,7 @@
 {
-  "name": "babel-plugin-es6-promise",
+  "name": "babel-plugin-es6-promise-esm",
   "version": "1.1.1",
-  "description": "Babel plugin that rewrites Promise references to es6-promise, but only if necessary",
+  "description": "Babel plugin that rewrites Promise references to es6-promise, support ESM for Rollup",
   "main": "dist/index.js",
   "files": [
     "dist",
@@ -21,19 +21,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/novemberborn/babel-plugin-es6-promise.git"
+    "url": "git+https://github.com/younkue/babel-plugin-es6-promise-esm"
   },
   "keywords": [
     "babel-plugin",
     "promise",
     "polyfill"
   ],
-  "author": "Mark Wubben (https://novemberborn.net/)",
+  "author": "Daybrush (https://daybrush.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/novemberborn/babel-plugin-es6-promise/issues"
+    "url": "https://github.com/younkue/babel-plugin-es6-promise-esm/issues"
   },
-  "homepage": "https://github.com/novemberborn/babel-plugin-es6-promise#readme",
+  "homepage": "https://github.com/younkue/babel-plugin-es6-promise-esm#readme",
   "dependencies": {
     "babel-template": "^6.7.0",
     "babel-types": "^6.7.2"

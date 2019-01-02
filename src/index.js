@@ -3,7 +3,7 @@ import * as t from 'babel-types'
 
 const buildPolyfill = template(`
   var PROMISE = typeof Promise === 'undefined'
-    ? require('es6-promise').Promise
+    ? _ESPromise.Promise
     : Promise
 `)
 
@@ -35,7 +35,15 @@ export default function () {
         if (used) {
           path.unshiftContainer('body', buildPolyfill({
             PROMISE: t.identifier(name)
-          }))
+          }));
+          path.unshiftContainer('body',
+            t.importDeclaration(
+              [
+                t.importDefaultSpecifier(t.identifier("_ESPromise"))
+              ],
+              t.stringLiteral("es6-promise")
+            )
+          );
         }
       }
     }
